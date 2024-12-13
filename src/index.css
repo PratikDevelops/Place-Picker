@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,700&family=Raleway:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  line-height: 1.5;
+  color: #defaf8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background: linear-gradient(180deg, #1f1c2c 0%, #1f1c2c 100%);
+}
+
+header {
+  text-align: center;
+  animation: fadeInHeader 1s ease-in;
+}
+
+@keyframes fadeInHeader {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+header img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  animation: fadeInTitle 1.5s ease-in;
+}
+
+@keyframes fadeInTitle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+header p {
+  margin: 0 auto;
+  font-size: 1.15rem;
+  max-width: 38ch;
+  color: #9eb5b4;
+}
+
+.places-category {
+  max-width: 85rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 2px solid #0d373e;
+  border-radius: 8px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.places-category h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+  color: #8feeff;
+  text-align: center;
+}
+
+.places {
+  max-width: 80rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem auto;
+  padding: 0;
+  list-style: none;
+}
+
+.place-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background: #1f1c2c;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  animation: slideUpFadeIn 0.5s ease-out forwards;
+}
+
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.place-item button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.place-item:nth-child(odd) button:hover,
+.place-item:nth-child(odd) button:focus {
+  box-shadow: 0 0 8px 4px rgba(255, 217, 0, 0.6);
+  border-radius: 8px;
+  transform: rotate(5deg);
+  animation: rotateEffect 0.5s ease-in-out;
+}
+
+@keyframes rotateEffect {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+.place-item:nth-child(even) button:hover,
+.place-item:nth-child(even) button:focus {
+  box-shadow: 0 0 8px 4px rgba(255, 217, 0, 0.6);
+  border-radius: 8px;
+  transform: rotate(-5deg);
+  animation: rotateEffect 0.5s ease-in-out;
+}
+
+.place-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  animation: fadeInImage 1s ease-out;
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.place-item h3 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-size: 0.9rem;
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  margin: 1rem auto;
+  background-color: #feee86;
+  border-radius: 4px;
+  padding: 0.15rem 0.35rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+#delete-confirmation {
+  padding: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+#delete-confirmation h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  color: #5d0909;
+}
+
+#delete-confirmation p {
+  margin: 0 auto;
+  font-size: 1.15rem;
+  max-width: 38ch;
+  color: #804242;
+}
+
+#confirmation-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.button {
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #5d0909;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  transition: background-color 0.3s ease;
+  animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button:hover,
+.button:focus {
+  background-color: #3e0505;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.button-text {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  color: #5d0909;
+}
+
+.modal::backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  animation: fadeInBackdrop 0.5s ease-out;
+}
+
+@keyframes fadeInBackdrop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal {
+  min-width: 30rem;
+  max-width: 90%;
+  padding: 2rem;
+  z-index: 2;
+  background: #f4f4f4;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: modalAppear 0.5s ease-out;
+  overflow: hidden;
+}
+
+@keyframes modalAppear {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.error {
+  max-width: 40rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: #ffdfdf;
+  color: #d33f3f;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal .error {
+  margin: 1rem auto;
+}
